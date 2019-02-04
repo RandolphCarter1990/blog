@@ -1,0 +1,64 @@
+{% extends "./base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block maincontent %}
+<div class="container__left">
+        <section class="articles">
+                <ul>
+                    {% include './article-instance-expand.html' %}
+                </ul>
+            </section>
+            <section class="related-articles">
+                <h2 class="brick brick--violet header header--triangle">Related articles</h2>
+                <ul class="triangle-style">
+                    <li>Lorem ipsum</li>
+                    <li>printing and typesetting industry</li>
+                    <li>printing and typesetting industry</li>
+                    <li>printing and typesetting industry</li>
+                    <li>li printing and typesetting industry</li>
+                    <li>printing and typesetting industry</li>
+                    <li>printing and typesetting industry</li>
+                    <li>li printing and typesetting industry</li>
+                    <li>printing and typesetting industry</li>
+                </ul>
+            </section>
+            <section class="comment">
+                <h2 class="brick brick--violet header header--triangle">Комментарии (3)</h2>
+                <ul>
+                    <li>
+                        <div class="comment__image"><img src="img/portrait.jpg" alt=""></div>
+                        <h3 class="comment__title">Bitch on the broom</h3>
+                        <div class="comment__date">05/03/2012 at 13:58</div>
+                        <p class="comment__text">Remaining essentially unchanged. It was popularised in the
+                            1960s with the release of Letraset sheets containing</p><a class="comment__reply"
+                            href="#">Reply</a>
+                    </li>
+                    <li>
+                        <div class="comment__image"><img src="img/portrait.jpg" alt=""></div>
+                        <h3 class="comment__title">Bitch on the broom</h3>
+                        <div class="comment__date">05/03/2012 at 13:58</div>
+                        <p class="comment__text">Remaining essentially unchanged. It was popularised in the
+                            1960s with the release of Letraset sheets containing</p><a class="comment__reply"
+                            href="#">Reply</a>
+                    </li>
+                    <li>
+                        <div class="comment__image"><img src="img/portrait.jpg" alt=""></div>
+                        <h3 class="comment__title">Bitch on the broom</h3>
+                        <div class="comment__date">05/03/2012 at 13:58</div>
+                        <p class="comment__text">Remaining essentially unchanged. It was popularised in the
+                            1960s with the release of Letraset sheets containing</p><a class="comment__reply"
+                            href="#">Reply</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="write-comment">
+                <h2 class="brick brick--violet header header--triangle">Write comment</h2>
+                <form method="post"><label><span>Name:</span><input class="text-input" type="text"></label><label><span>Email
+                            :</span><input class="text-input" type="text"></label><label><span>Website :</span><input
+                            class="text-input" type="text"></label><label class="write-comment__comment"><span>Comment
+                            :</span><textarea class="text-input"></textarea></label><button class="button" type="submit">Post
+                        comment</button></form>
+            </section>
+    </div>
+{% endblock %}

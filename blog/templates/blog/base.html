@@ -1,0 +1,223 @@
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="{% static "blog/css/styles.min.css" %}" rel="stylesheet">
+    <title>{% block title %}Нет заголовка{% endblock title %}</title>
+    <link rel="icon" href="img/page-icon.svg">
+</head>
+
+<body>
+        {% include "./sprite.html" %}
+   
+    <div class="container">
+        <header class="blog-header">
+            <div class="blog-header__top">
+                <div class="blog-header__logo"><img src="img/logo.png" width="185" height="65" alt=""></div>
+                <div class="blog-header__search">
+                    <form method="post"><input class="text-input" type="text"><button class="brick brick--blue blog-header__search-button"
+                            type="submit">Search</button></form>
+                </div>
+                <div class="blog-header__socials">
+                    <ul>
+                        <li class="brick--orange"><svg class="svg-icon" width="22" height="22">
+                                <use xlink:href="#rss"></use>
+                            </svg></li>
+                        <li class="brick--blue"><svg class="svg-icon" width="22" height="22">
+                                <use xlink:href="#vk"></use>
+                            </svg></li>
+                        <li class="brick--violet"><svg class="svg-icon" width="22" height="22">
+                                <use xlink:href="#fb"></use>
+                            </svg></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li class="brick brick--blue"><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="brick brick--green"><a href="#">Cinema</a></li>
+                    <li class="brick brick--violet"><a href="#">Magazine</a></li>
+                    <li class="brick brick--blue"><a href="#">Cssauthor.com</a></li>
+                    <li class="brick brick--orange"><a href="#">Topmenu</a></li>
+                    <li class="brick brick--red"><a href="#">Archieves</a></li>
+                    <li class="brick brick--gray"><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% if popular_categories %}
+                <section class="top-stories">
+                    <h2>Популярные категории</h2>
+                    <ul>
+    
+                            {% for category, article in top_articles.items %}
+                                <li>
+                                    
+                                    <div class="top-stories__image">
+                                        {% if article.cover_image.url %}
+                                            <img src="{{article.cover_image.url}}" width="326" height="207" alt=""></div>
+                                        {% endif %}    
+                                    <a class="brick brick--blue" href="#">{{category.title}}</a>
+                                        
+                            
+                                
+                                    <p>{{article.title}}</p>
+                                </li>
+                            {% endfor %}
+                            
+                    
+                    </ul>
+                </section>
+            {% endif %}
+            <div class="container__row">
+                {% block maincontent %}
+                   
+                {% endblock %}
+
+                {% block aside %}
+                    <aside class="container__aside">
+                        <section class="top-stories-aside">
+                            <h2 class="brick brick--violet header header--triangle">Top stories</h2>
+                            <ul class="top-stories-aside__tags">
+                                <li class="brick brick--pink">Fashion</li>
+                                <li class="brick brick--orange">Cinema</li>
+                                <li class="brick brick--blue">Television</li>
+                            </ul>
+                            <ul class="top-stories-aside__articles">
+                                <li>
+                                    <div class="top-stories-aside__image"><img src="img/aside-1.jpg" width="81" height="97"
+                                            alt=""></div>
+                                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting</h3>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                        the release of Letraset sheets containingLorem Ipsum passages, and more recently
+                                        with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                        Ipsum.</p>
+                                </li>
+                                <li>
+                                    <div class="top-stories-aside__image"><img src="img/aside-1.jpg" width="81" height="97"
+                                            alt=""></div>
+                                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting</h3>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                        the release of Letraset sheets containingLorem Ipsum passages, and more recently
+                                        with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                        Ipsum.</p>
+                                </li>
+                                <li>
+                                    <div class="top-stories-aside__image"><img src="img/aside-1.jpg" width="81" height="97"
+                                            alt=""></div>
+                                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting</h3>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                        the release of Letraset sheets containingLorem Ipsum passages, and more recently
+                                        with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                        Ipsum.</p>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="like">
+                            <h2 class="brick brick--violet">Top stories</h2>
+                            <ul>
+                                <li>
+                                    <div class="like__image"><img src="img/like.jpg" alt=""></div>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and typesetting industry.</p><a href="#">Medication
+                                        »</a>
+                                </li>
+                                <li>
+                                    <div class="like__image"><img src="img/like.jpg" alt=""></div>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and typesetting industry.</p><a href="#">Medication
+                                        »</a>
+                                </li>
+                                <li>
+                                    <div class="like__image"><img src="img/like.jpg" alt=""></div>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and typesetting industry.</p><a href="#">Medication
+                                        »</a>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="archives">
+                            <h2 class="brick brick--violet">Archives</h2>
+                            <ul>
+                                <li><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                                <li><a href="#">Lorem Ipsum has been the industry's standard dummy text ever since the
+                                        1500s.</a></li>
+                                <li><a href="#">When an unknown printer took a galley of type and scrambled it to make a
+                                        type specimen book</a></li>
+                                <li><a href="#">It has survived not only five centuries, but also the leap into electronic
+                                        typesetting Lorem Ipsum is simply dummy text of the printing and typesetting
+                                        industry.</a></li>
+                                <li><a href="#">Remaining essentially unchanged. It was popularised in the 1960s with the
+                                        release of</a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                                <li><a href="#">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and typesetting industry.</a></li>
+                            </ul>
+                        </section>
+                        <section class="tags">
+                            <h2 class="brick brick--violet">Tag cloud</h2>
+                            <ul>
+                                <li><a class="tags__link" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--1" href="#">Cssauthor Aristokrasi</a></li>
+                                <li><a class="tags__link" href="#">Beyoncé Blake</a></li>
+                                <li><a class="tags__link" href="#">Lively Brad</a></li>
+                                <li><a class="tags__link tags__link--3" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--1" href="#">Дача</a></li>
+                                <li><a class="tags__link tags__link--3" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--5" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--4" href="#">Резка</a></li>
+                                <li><a class="tags__link tags__link--5" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--5" href="#">Станки</a></li>
+                                <li><a class="tags__link tags__link--2" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--1" href="#">Cat</a></li>
+                                <li><a class="tags__link tags__link--3" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--4" href="#">Sunlie</a></li>
+                                <li><a class="tags__link tags__link--5" href="#">Every morning</a></li>
+                                <li><a class="tags__link tags__link--2" href="#">Колодец</a></li>
+                                <li><a class="tags__link tags__link--5" href="#">Moon</a></li>
+                                <li><a class="tags__link tags__link--4" href="#">Angelina Jolie</a></li>
+                                <li><a class="tags__link tags__link--3" href="#">Angelina Jolie</a></li>
+                            </ul>
+                        </section>
+                    </aside>
+                {% endblock aside %}
+            </div>
+            <div class="pagination"><a class="pagination__older-posts" href="#">Older posts</a></div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+<script src="js/js-all.js"></script>
+
+</html>
+
+{% endblock content %}

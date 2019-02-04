@@ -1,0 +1,4021 @@
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+@import url(../lib/normalize.css);
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=cyrillic");
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+@import url(../lib/normalize.css);
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding-bottom: 4.6875rem !important;
+  color: #494949;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #ebebeb;
+  background-image: url("../img/raibow-bg.png");
+  background-size: 773px 675px;
+  background-position: -170px -150px;
+  background-repeat: no-repeat; }
+
+body .container {
+  background-color: #fff; }
+
+.header {
+  margin-bottom: 2.5rem; }
+  .header--triangle {
+    position: relative;
+    z-index: 1; }
+    .header--triangle::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 2.25rem 2.25rem 2.25rem;
+      border-color: transparent transparent #5261ac transparent;
+      position: absolute;
+      top: 0;
+      right: -2.25rem;
+      z-index: -1; }
+
+ul.triangle-style li {
+  position: relative;
+  padding-left: 0.9375rem; }
+  ul.triangle-style li::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0.3125rem 0 0.3125rem 0.5625rem;
+    border-color: transparent transparent transparent #5261ac;
+    position: absolute;
+    left: 0;
+    top: 0.5625rem; }
+
+.brick {
+  display: inline-block;
+  padding: 0 1rem !important;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  color: #ffffff !important;
+  font-size: 1.1875rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase; }
+  .brick--blue {
+    background-color: #00aedb !important; }
+  .brick--orange {
+    background-color: #f78f1d !important; }
+  .brick--violet {
+    background-color: #5261ac !important; }
+  .brick--green {
+    background-color: #8cc63f !important; }
+  .brick--red {
+    background-color: #ff0000 !important; }
+  .brick--gray {
+    background-color: #898989 !important; }
+  .brick--pink {
+    background-color: #ec098d !important; }
+
+.text-input {
+  padding: 0 0.5rem;
+  height: 2.25rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #494949; }
+
+.button {
+  text-decoration: none !important;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 1.3125rem;
+  height: 2.1875rem;
+  line-height: 2.1875rem;
+  background-color: #f78f1d;
+  color: #fff; }
+  .button:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.container {
+  max-width: 71.875rem;
+  width: 100%;
+  padding: 0 1.875rem;
+  margin: 0 auto; }
+
+.container__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.container__left {
+  width: 67%;
+  padding-right: 1.5rem; }
+
+.container__aside {
+  width: 33%; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.blog-header {
+  margin-bottom: 0.8125rem; }
+
+.blog-header__search {
+  margin-right: auto; }
+
+.blog-header__search form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.blog-header__search input[type="text"] {
+  width: 20.625rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  border: 1px solid rgba(0, 0, 1, 0.1); }
+
+.blog-header__search-button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block; }
+
+.blog-header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding: 1.875rem 0.9375rem; }
+
+.blog-header__logo {
+  display: inline-block;
+  margin-right: 6.25rem;
+  margin-bottom: 3px; }
+
+.blog-header__socials {
+  margin-bottom: 0.3125rem; }
+
+.blog-header__socials ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.blog-header__socials li {
+  position: relative;
+  width: 2.375rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  margin-right: 0.375rem; }
+
+.blog-header__socials ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.blog-header__socials svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1.375rem;
+  height: 1.375rem;
+  fill: #fff; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.site-nav li:last-child {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.site-nav a {
+  text-decoration: none !important;
+  color: inherit; }
+  .site-nav a:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.top-stories h2 {
+  margin-bottom: 0.5rem;
+  color: #00aedb;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 2.3125rem;
+  text-transform: uppercase; }
+
+.top-stories ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch; }
+
+.top-stories li {
+  width: 33%;
+  margin-bottom: 2rem;
+  margin-right: 0.5%; }
+
+.top-stories li:last-child {
+  margin-right: 0; }
+
+.top-stories__image {
+  position: relative;
+  width: 100%;
+  height: 13.125rem;
+  overflow: hidden; }
+
+.top-stories li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+  z-index: 0; }
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    .top-stories li img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 100%; } }
+
+.top-stories li a {
+  position: relative;
+  text-decoration: none !important;
+  color: inherit;
+  padding-left: 1.875rem !important;
+  width: 100%; }
+  .top-stories li a:hover {
+    text-decoration: none !important;
+    color: inherit; }
+  .top-stories li a::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    left: 0.6875rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.top-stories li p {
+  margin: 0;
+  padding: 0;
+  color: #6a6666;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.25rem; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.articles > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.articles > ul > li {
+  position: relative;
+  margin-bottom: 1.875rem; }
+
+.articles > ul > li > h2 {
+  margin-bottom: 0.5rem;
+  color: #000000;
+  font-size: 2.1875rem;
+  font-weight: 700;
+  line-height: 2.9375rem; }
+
+.articles > ul > li > p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  color: #494949;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  text-align: justify; }
+
+.articles__date {
+  position: absolute; }
+
+.articles__gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0.625rem;
+  border: 1px solid gray; }
+
+.articles__gallery-image {
+  position: relative;
+  overflow: hidden; }
+
+.articles__gallery-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+  z-index: 0; }
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    .articles__gallery-image img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 100%; } }
+
+.articles__gallery-image {
+  width: calc(20% - 13px); }
+
+.articles__gallery-image {
+  height: 9.375rem;
+  width: calc(25% - 13px); }
+
+.articles__gallery-image:first-child {
+  height: 23.75rem;
+  width: 100%;
+  margin-bottom: 0.75rem; }
+
+.articles__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.5rem 0.8125rem;
+  color: #6a6666;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 20px; }
+
+.articles__category {
+  margin-right: 1.5625rem; }
+
+.articles__bottom a {
+  text-decoration: none !important;
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .articles__bottom a:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+.articles__bottom svg {
+  fill: #f78f1d;
+  margin-right: 0.625rem; }
+
+.articles__comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-right: auto; }
+
+.articles__date {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: -5rem;
+  top: 0.625rem; }
+
+.articles__date div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4.375rem;
+  height: 2.8125rem;
+  background-color: #f78f1d;
+  color: #ebebeb;
+  font-size: 2.1875rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.articles__date div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  width: 3.875rem;
+  height: 1.6875rem;
+  background-color: #00aedb;
+  color: #ffffff;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.pagination {
+  padding: 1.875rem 0; }
+
+.pagination__older-posts {
+  text-decoration: none !important;
+  color: inherit;
+  color: #6a6666;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 20px; }
+  .pagination__older-posts:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.top-stories-aside {
+  margin-bottom: 1rem; }
+
+.top-stories-aside h2 {
+  position: relative;
+  width: 11.25rem;
+  margin-bottom: 0.1875rem; }
+
+.top-stories-aside__tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.25rem; }
+
+.top-stories-aside__tags li:last-child {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.top-stories-aside__tags li:nth-child(2) {
+  position: relative; }
+  .top-stories-aside__tags li:nth-child(2)::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0.5625rem 0.8125rem 0 0.5625rem;
+    border-color: #f78f1d transparent transparent transparent;
+    position: absolute;
+    bottom: -0.5625rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+
+.top-stories-aside__articles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.top-stories-aside__articles li {
+  position: relative;
+  padding: 0 0.625rem 1rem 5.9375rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dedddd; }
+
+.top-stories-aside__articles li:last-child {
+  border-bottom: none;
+  margin-bottom: 0; }
+
+.top-stories-aside__image {
+  position: absolute;
+  left: 0.1875rem;
+  top: 0;
+  width: 23%;
+  height: 6.25rem;
+  overflow: hidden; }
+
+.top-stories-aside__articles li h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  color: #00aedb; }
+
+.top-stories-aside__articles li p {
+  height: 3.125rem;
+  margin: 0;
+  color: #494949;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.0625rem;
+  overflow: hidden; }
+
+.top-stories-aside__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+  z-index: 0; }
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    .top-stories-aside__image img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%; } }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.like {
+  margin-bottom: 1.25rem; }
+
+.like h2 {
+  display: block; }
+
+.like ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.like li {
+  padding: 0 0.625rem 0 5.9375rem;
+  position: relative;
+  margin-bottom: 1rem; }
+
+.like li p {
+  margin: 0 0 0.5rem;
+  height: 35px;
+  color: #494949;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.0625rem;
+  overflow: hidden; }
+
+.like li a {
+  text-decoration: none !important;
+  color: inherit;
+  color: #00aedb;
+  font-weight: 400;
+  line-height: 1.75rem; }
+  .like li a:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+.like__image {
+  position: absolute;
+  left: 0.3125rem;
+  top: 0;
+  width: 4.375rem;
+  height: 4.375rem; }
+
+.like__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+  z-index: 0; }
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    .like__image img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%; } }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.archives h2 {
+  display: block;
+  margin-bottom: 1.5625rem; }
+
+.archives ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.archives li {
+  position: relative;
+  padding: 0 0.5rem 0.5rem 1.5625rem;
+  margin-bottom: 0.625rem;
+  border-bottom: 1px solid #dedddd; }
+  .archives li:last-child {
+    border-bottom: none; }
+
+.archives a {
+  display: block;
+  text-decoration: none !important;
+  color: inherit;
+  height: 2.125rem;
+  color: #494949;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.0625rem;
+  overflow: hidden; }
+  .archives a:hover {
+    text-decoration: none !important;
+    color: inherit; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.tags h2 {
+  display: block;
+  margin-bottom: 0.625rem; }
+
+.tags ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify-all; }
+
+.tags li {
+  display: inline-block; }
+
+.tags__link {
+  text-decoration: none !important;
+  color: inherit;
+  color: #5261ac;
+  margin-right: 0.3125rem;
+  font-weight: 700; }
+  .tags__link:hover {
+    text-decoration: none !important;
+    color: inherit; }
+  .tags__link--1 {
+    font-size: 1.5625rem;
+    color: #f78f1d; }
+  .tags__link--2 {
+    font-size: 1.4375rem; }
+  .tags__link--3 {
+    font-size: 1.3125rem; }
+  .tags__link--4 {
+    font-size: 1.1875rem; }
+  .tags__link--5 {
+    font-size: 1.0625rem; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.related-articles {
+  padding-bottom: 1.25rem; }
+
+.related-articles ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.related-articles li {
+  margin-bottom: 0.5rem;
+  width: 50%;
+  color: #494949;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.6875rem; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.write-comment form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding: 0 7.5rem 2.8125rem 0; }
+
+.write-comment label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1.625rem; }
+
+.write-comment label .text-input {
+  width: 26.875rem; }
+
+.write-comment label span {
+  margin-right: 1.25rem; }
+
+.write-comment__comment textarea {
+  height: 8.125rem; }
+
+/**
+* Sass CSS triangle mixin, create any kind of triangles with ease
+
+* Use:
+* @include triangle(direction,width,height,color);
+
+* Example:
+* $square: 50px;
+* $color: red;
+* selector {
+*	 @include triangle(bottomright,$square,$square,$color);
+* }
+
+* Forked from https://github.com/juanbrujo/triangle-mixin.less
+*/
+/**
+* Use
+*/
+.top {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.left {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.bottom {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 30px;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.right {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 30px 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.topright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 30px 30px 0;
+  border-color: transparent #ecf0f1 transparent transparent; }
+
+.topleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 30px 0 0;
+  border-color: #ecf0f1 transparent transparent transparent; }
+
+.bottomright {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomleft {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 30px 0 0 30px;
+  border-color: transparent transparent transparent #ecf0f1; }
+
+.top-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 15px 60px 15px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.bottomright-scalene {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -moz-transform: scale(0.9999);
+  border-width: 0 0 60px 30px;
+  border-color: transparent transparent #ecf0f1 transparent; }
+
+.weird {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ecf0f1;
+  color: black;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer; }
+  .weird:after {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #ecf0f1 transparent; }
+  .weird:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(0.9999);
+    border-width: 60px 60px 0 0;
+    border-color: #ecf0f1 transparent transparent transparent; }
+  .weird:hover {
+    background-color: #cfd9db; }
+    .weird:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent #cfd9db transparent; }
+    .weird:hover:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      -moz-transform: scale(0.9999);
+      border-width: 60px 60px 0 0;
+      border-color: #cfd9db transparent transparent transparent; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    body {
+      font-size: 14px; } }
+  @media (max-width: 768px) {
+    body {
+      font-size: 10px; } }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.icon {
+  display: inline-block; }
+
+.svg-icon {
+  position: relative;
+  top: .125em;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  -webkit-transition: fill .3s;
+  transition: fill .3s; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px; }
+
+.comment {
+  padding-left: 5.3125rem; }
+
+.comment ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.comment ul li {
+  position: relative;
+  padding-left: 5.3125rem;
+  margin-bottom: 1.25rem; }
+
+.comment__title {
+  margin-bottom: 0.75rem;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 17px;
+  color: #5261ac; }
+
+.comment__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4.375rem;
+  height: 4.375rem;
+  overflow: hidden; }
+
+.comment__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+  z-index: 0; }
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    .comment__image img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%; } }
+
+.comment__date {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.0625rem;
+  color: #494949; }
+
+.comment__text {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.0625rem; }
+
+.comment__reply {
+  text-decoration: none !important;
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #5261ac;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.0625rem;
+  text-align: right; }
+  .comment__reply:hover {
+    text-decoration: none !important;
+    color: inherit; }
+  .comment__reply::before {
+    content: "";
+    margin-right: 1.125rem;
+    width: 1px;
+    height: 1px;
+    background-color: #d5d5d5;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }

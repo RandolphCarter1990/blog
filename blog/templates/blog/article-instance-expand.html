@@ -1,0 +1,13 @@
+{%  extends './article-instance.html' %}
+
+{% block article-text %}
+    {% autoescape off %}
+    <div articles__text>{{article.content}}</div>
+    {% endautoescape %}
+{% endblock article-text %}
+
+{% block article-gallery %}
+{% endblock article-gallery %}
+
+{% block article-bottom %}
+{% endblock article-bottom %}

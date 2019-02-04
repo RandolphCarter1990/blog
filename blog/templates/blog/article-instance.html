@@ -1,0 +1,50 @@
+{% block article-instance %}
+
+<li>
+    {% include './components/article-date.html' %}
+    <h2>{{ article.title|title }}</h2>
+
+    {% block article-text %}
+        {% autoescape off %}
+            <div class="articles__text">{{ article.preview_text|truncatechars:537}}</div>
+        {% endautoescape %}
+    {% endblock article-text %}
+
+    {% block article-gallery %}
+        <div class="articles__gallery">
+            {% load cropping %}    
+
+            {% if article.cover_image  %}
+                <div class="articles__gallery-image articles__cover-image"><img src="{% cropped_thumbnail article "cover_cropping" %}" alt=""></div>
+            {% endif %}
+            {% if article.preview_image_1  %}
+                <div class="articles__gallery-image"><img src="{% cropped_thumbnail article "preview_image_1_cropping" %}" alt=""></div>
+            {% endif %}
+            {% if article.preview_image_2  %}
+                <div class="articles__gallery-image"><img src="{% cropped_thumbnail article "preview_image_2_cropping" %}" alt=""></div>
+            {% endif %}
+            {% if article.preview_image_3  %}
+                <div class="articles__gallery-image"><img src="{% cropped_thumbnail article "preview_image_3_cropping" %}" alt=""></div>
+            {% endif %}
+            {% if article.preview_image_4  %}
+                <div class="articles__gallery-image"><img src="{% cropped_thumbnail article "preview_image_4_cropping" %}" alt=""></div>
+            {% endif %}
+        </div>
+    {% endblock article-gallery %}
+
+    {% block article-bottom %}
+        <div class="articles__bottom">
+                <div class="articles__category">Категория: 
+                    {% for category in article.category.all %}
+                        <span>{{category.title|lower}},</span>
+                    {% endfor %}
+                </div><a class="articles__comments"
+                    href="#"><svg width="17" height="17">
+                        <use xlink:href="#speech-bubbles"></use>
+                    </svg>5 Comments</a>
+                <div><a href="{% url 'article' article.id %}">Читать</a></div>
+        </div>
+    {% endblock article-bottom %}
+</li>
+
+{% endblock article-instance %}
